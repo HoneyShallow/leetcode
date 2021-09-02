@@ -1,5 +1,8 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
+using namespace std;
+
 vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) {
 	vector<int> dp(n, 0);
 	// 利用差分数组和前缀和，dp[i]表示第i个元素同第i-1个元素的差值
@@ -16,14 +19,24 @@ vector<int> corpFlightBookings(vector<vector<int>>& bookings, int n) {
 		dp[i] += dp[i-1];
 	return dp;
 }
-template <typename T>
+//template <typename T>
+template <class T>
 void print(const T & x){
 	std::cout << x << " ";
 }
 int main(){
 /*输出：[10,55,45,25,25]*/
-	vector<vector<int>> bookings = {{1,2,10}, {2,3,20}, {2,5,25}};
+	vector<vector<int>> bookings ;
+	vector<int> tmp1 = {1,2,10};
+ 	vector<int> tmp2 = {2,3,20};
+	vector<int> tmp3 = {2,5,25};
+	bookings.push_back(tmp1);
+	bookings.push_back(tmp2);
+	bookings.push_back(tmp3);
+	int n = 5;
 	vector<int> pro(n);
-	pro = corpFlightBookings(bookings, 5);
-	for_each(pro.begin(), pro.end(), print<int>());
+	pro = corpFlightBookings(bookings, n);
+	for_each(pro.begin(), pro.end(), print<int>);
+
+	return 0;
 }
