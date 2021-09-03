@@ -13,7 +13,7 @@ ListNode* init_list(vector<int>& elems){
 	int num = elems.size(); 
 	if(num == 0) return nullptr;
 	/*采用尾插法*/
-       	ListNode * head = new ListNode(-1);
+    ListNode * head = new ListNode(-1);//头结点
 	ListNode * tail = head;
 	for(auto & elem:elems){
 		ListNode* tmp = new ListNode(elem);
