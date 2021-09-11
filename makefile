@@ -9,7 +9,6 @@ all:$(obj)
 $(obj):%:%.cpp
 	$(CC) $< -o $@ $(CFLAGS)
 
-
 .PHONY:clean all
 clean:
 	-rm -rf $(obj)

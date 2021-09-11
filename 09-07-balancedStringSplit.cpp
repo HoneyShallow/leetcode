@@ -19,7 +19,7 @@ public:
 int main() {
 	std::string str = "RLRRLLRLRL";
 	Solution ans;
-	int num = ans->balancedStringSplit(str);
+	int num = ans.balancedStringSplit(str);
 	std::cout << num << std::endl;
 	return 0;
 }

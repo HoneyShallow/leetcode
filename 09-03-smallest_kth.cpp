@@ -1,16 +1,19 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <priority_queue>
+#include <queue>
+using namespace std;
 
 class Solution {
 public:
     vector<int> smallestK(vector<int>& arr, int k) {
         /*方案1.将数组按从小到大的顺序排序，取前k个元素即可*/
+	/*
         vector<int> ret(k);
         sort(arr.begin(), arr.end(), std::less<int>());
         copy(arr.begin(), arr.begin()+k, ret.begin());
         return ret;
+	*/
         /*方案2：利用最大顶堆*/
         if(k == 0) return {};
         vector<int> ret;
@@ -37,7 +40,8 @@ void print(const int & x){
 int main() {
 	vector<int> test = {1,3,5,7,2,4,6,8};
 	int k = 4;
-	vector<int> ret = Solution::smallestK(test, k);
+	Solution ans;
+	vector<int> ret = ans.smallestK(test, k);
 	for_each(ret.begin(), ret.end(), print);
-	retunr 0;
+	return 0;
 }
