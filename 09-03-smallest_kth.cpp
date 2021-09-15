@@ -15,12 +15,13 @@ public:
         return ret;
 	*/
         /*方案2：利用最大顶堆*/
+	int n = arr.size();
         if(k == 0) return {};
         vector<int> ret;
         priority_queue<int, vector<int>, std::less<int>> que;
         for(int i = 0; i < k; i++)
             que.push(arr[i]);
-        for(int j = k; j < arr.size(); j++){
+        for(int j = k; j < n; j++){
             if(que.top() > arr[j]){
                 que.pop();
                 que.push(arr[j]);

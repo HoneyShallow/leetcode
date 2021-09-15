@@ -2,7 +2,7 @@ src = $(wildcard ./*.cpp) # 获取指定路径下的特定类型的文件
 obj = $(patsubst %.cpp, %, $(src))
 
 CC = g++
-CFLAGS = -std=c++11 -Wall -g 
+CFLAGS = -std=c++17 -Wall -g 
 
 all:$(obj)
 
